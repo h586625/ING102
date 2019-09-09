@@ -1,0 +1,31 @@
+
+html {
+  color: #333;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+
+.clearfix:after {
+  clear: both;
+}
