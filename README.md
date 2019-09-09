@@ -1,4 +1,4 @@
-#Bergen- 4 / Bordbestilling
+# Bergen- 4 / Bordbestilling
 
 * Daniel Kleiven Haugland
 * Cathrine Bjerke Monsen
