@@ -29,3 +29,47 @@ video {
 .clearfix:after {
   clear: both;
 }
+
+.main-heading {
+  text-align: center;
+}
+
+.intro,
+.members {
+  margin: 0 auto;
+}
+
+.intro {
+  width: 50%;
+}
+
+.members {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.members a {
+  text-decoration: none;
+}
+
+.members a:hover {
+  opacity: .8;
+  transition: .25s;
+}
+
+.members figure {
+  display: inline-block;
+}
+
+.members img {
+  width: 100%;
+  height: auto;
+}
+
+.members figcaption {
+  text-align: center;
+  padding: 10px;
+  background-color: #151515;
+  color: #ffffff;
+}
