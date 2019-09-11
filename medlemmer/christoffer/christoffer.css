@@ -1,0 +1,56 @@
+
+@keyframes float-up-and-down {
+	0% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+		transform: translatey(0px);
+	}
+	50% {
+		box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
+		transform: translatey(-10px);
+	}
+	100% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+		transform: translatey(0px);
+	}
+}
+
+ul {
+    padding-left: 40px;
+}
+
+.main-heading {
+    text-align: center;
+}
+
+.intro {
+    clear: both;
+    margin: 0 auto;
+    padding-bottom: 40px;
+    width: 75%;
+    overflow: hidden;
+    font-size: 20px;
+}
+
+.profile-image {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    animation: float-up-and-down 3s ease-in-out infinite;
+}
+
+.list {
+    clear: both;
+}
+
+.list li {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.fb-link {
+    float: left;
+}
+
+.homepage-link {
+    float: right;
+}
