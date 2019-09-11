@@ -1,0 +1,38 @@
+html{
+    
+    background-color: white;
+    padding-left: 20%;
+    
+}
+
+body{
+    
+    background-color: navajowhite;
+    width: 80%;
+    align-content: center;
+    text-align: center;
+    margin: 0;
+    
+}
+
+img{
+    
+    width: 30%;
+    border: 3px solid black;
+    border-radius: 10%;
+    
+}
+
+h2{
+    
+    margin-top: 0;
+    
+}
+
+#info{
+    
+    width: 80%;
+    padding-left: 10%;
+    
+}
+
