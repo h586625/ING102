@@ -1,8 +1,1 @@
-# Bergen- 4 / Bordbestilling
-
-* Daniel Kleiven Haugland
-* Cathrine Bjerke Monsen
-* Erlend Langeland Nesheim
-* Lars Emil Bjørnsen Norevik
-* Mathias Nupen
-* Christoffer Berge Pedersen Riis
+﻿# Bergen- 4 / Bordbestilling[Link til nettsiden på GitHub Pages](https://h586625.github.io/ING102/)* Daniel Kleiven Haugland* Cathrine Bjerke Monsen* Erlend Langeland Nesheim* Lars Emil Bjørnsen Norevik* Mathias Nupen* Christoffer Berge Pedersen Riis
