@@ -50,7 +50,9 @@ video {
 }
 
 .members a {
+  display: inline-block;
   text-decoration: none;
+  width: 300px;
 }
 
 .members a:hover {
