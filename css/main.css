@@ -3,6 +3,7 @@ html {
   color: #333;
   font-size: 16px;
   line-height: 1.4;
+  background-color: #eee;
 }
 
 audio,
@@ -17,6 +18,16 @@ video {
 img {
   width: 100%;
   height: auto;
+  border: 1px solid #000;
+}
+
+table {
+  width: 100%;
+  text-align: left;
+}
+
+tr:nth-child(2n) {
+  background-color: #cccccc;
 }
 
 .hidden {
@@ -47,6 +58,9 @@ img {
 
 .main-heading {
   text-align: center;
+  font-family: Arial;
+  text-transform: uppercase;
+  color: rgb(136, 98, 65);
 }
 
 .intro,
