@@ -61,6 +61,32 @@ tr:nth-child(2n) {
   color: rgb(136, 98, 65);
 }
 
+.menu {
+  background-color: #FF7B00;
+  text-align: center;
+  font-family: Arial;
+}
+
+  .menu__items {
+    margin: 0;
+  }
+
+    .menu__item {
+      display: inline-block;
+      height: 100%;
+    }
+
+      .menu__link {
+        display: inline-block;
+        padding: 20px 10px;
+        text-decoration: none;
+        color: #000000;
+        transition: 0.2s all;
+      }
+      .menu__link:hover {
+        background-color: rgb(255, 163, 78);
+      }
+
 /* ==========================================================================
    Forside
    ========================================================================== */
