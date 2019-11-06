@@ -158,6 +158,30 @@ tr:nth-child(2n) {
   margin-bottom: 25px;
 }
 
+.prosjekt-lenker {
+  position: fixed;
+  left: 0;
+  top: 170px;
+  padding: 10px;
+  background-color: rgb(255, 163, 78);
+}
+
+  .prosjekt-lenker a {
+    display: block;
+    background-color: #000000;
+    color: #ffffff;
+    border-radius: 15px;
+    padding: 5px 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    text-decoration: none;
+    transition: .25s all;
+  }
+
+    .prosjekt-lenker a:hover {
+      background-color: #444444;
+    }
+
 /* ==========================================================================
    Christoffer
    ========================================================================== */
