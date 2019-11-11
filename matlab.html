@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="no">
+
+    <head>
+        <meta charset="utf-8">
+        <title>MatLab - gruppe 4</title>
+        <meta name="description" content="">
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+    </head>
+
+    <body>
+
+        <div class="gruppe-label">Gruppe 4</div>
+
+        <nav class="menu">
+            <ul class="menu__items">
+                <li class="menu__item"><a class="menu__link" href="index.html">Forsiden</a></li>
+                <li class="menu__item"><a class="menu__link" href="prosjekt.html">Prosjektet</a></li>
+                <li class="menu__item"><a class="menu__link" href="#">MATLAB</a></li>
+                <li class="menu__item"><a class="menu__link" href="index.html#members">Medlemmer</a></li>
+            </ul>
+        </nav>
+
+        <article class="container">
+
+            <h1>MatLab</h1>
+
+            <h2>Bilder</h2>
+            <img id="peaks" src="Bilder/peaks.PNG" alt="Peaks">
+            <img id="membrane" src="Bilder/membrane.PNG" alt="Membrane">
+            <img id="sinc" src="Bilder/sinc.PNG" alt="Sinc">
+            <img id="klein" src="Bilder/klein.PNG" alt="Klein-bottle">
+            <br>
+            <h2>Kildekode</h2>
+            <div id="kildekode">
+                <p>function oblig</p>
+                <p> % Select a data set from the pop-up menu and display</p>
+                <p>f = figure('Position',[300,300,450,285]);</p>
+
+                <p>% Timer</p>
+                <p>tmr = timer('ExecutionMode', 'FixedRate', ...</p>
+                <p>'Period', 0.2, ...</p>
+                <p>'TimerFcn', {@timerCallback});</p>
+
+                <p>% Audio</p>
+                <p>[x,fs] = audioread('guitar.wav');</p>
+                <p>musicPlayer = audioplayer(x, fs);</p>
+
+                <p>% Construct the components.</p>
+                <p>h = [];</p>
+
+                <p>h(1) = uicontrol('Style','popupmenu',...</p>
+                <p>'String',{'Peaks','Membrane','Sinc', 'Klein Bottle'},...</p>
+                <p>'Position',[335,20,100,25],...</p>
+                <p>'Callback',@popup_menu_Callback);</p>
+
+                <p>h(2) = uicontrol('Style','pushbutton',...</p>
+                <p>'String','START','Position',[340,250,100,35],...</p>
+                <p>'Callback',@start_Callback);</p>  
+
+                <p>h(3) = uicontrol('Style','pushbutton',...</p>
+                <p>'String','STOPP','Position',[340,215,100,35],...</p>
+                <p>'Callback',@stop_Callback);</p>
+
+                <p>h(4) = uicontrol('Style','pushbutton',...</p>
+                <p>'String','Rotate','Position',[340,180,100,35],...</p>
+                <p>'Callback',@rotate_Callback);</p>
+
+                <p>h(5) = uicontrol('Style','pushbutton',...</p>
+                <p>'String','Andre siden','Position',[340,125,100,35],...</p>
+                <p>'Callback',@side1_Callback);</p>
+
+                <p>h(6) = uicontrol('Style','pushbutton',...</p>
+                <p>'String','Ovenfra','Position',[340,90,100,35],...</p>
+                <p>'Callback',@ovenfra_Callback);</p>
+
+                <p>h(7) = axes('Units','pixels','Position',[50,30,255,255]);</p>
+
+                <p>% Assure resize automatically.</p>
+                <p>f.Units = 'normalized';</p>
+                <p>set(h, 'Units', 'normalized');</p>
+                <p>set(h, 'FontSize', 12);</p>
+
+                <p>xlabel('x value')</p>
+                <p>ylabel('y value')</p>
+                <p>zlabel('z value')</p>
+
+                <p>% Generate the data to plot.</p>
+                <p>peaks_data = peaks(75);</p>
+                <p>membrane_data = membrane;</p>
+                <p>[x,y] = meshgrid(-8:.5:15);</p>
+                <p>r = sqrt(x.^2+y.^2) + eps;</p>
+                <p>sinc_data = sin(r)./r;</p>
+                <p>% Create a plot in the axes.</p>
+                <p>current_data = peaks_data;</p>
+                <p>s = surf(current_data);</p>
+
+                <p>xlim([-20 100]);</p>
+                <p>ylim([-20 100]);</p>
+                <p>zlim([-10 10]);</p>
+
+                <p>%  Pop-up menu callback. Read the pop-up menu Value property to</p>
+                <p>function popup_menu_Callback(source,eventdata)</p> 
+                <p>% Determine the selected data set.</p>
+                <p>str = get(source, 'String');</p>
+                <p>val = get(source,'Value');</p>
+                <p>% Set current data to the selected data set.</p>
+                <p>switch str{val};</p>
+                <p>case 'Peaks' % User selects Peaks.</p>
+                <p>current_data = peaks_data;</p>
+                <p>s = surf(current_data);</p>
+
+                <p>xlim([-20 100]);</p>
+                <p>ylim([-20 100]);</p>
+                <p>zlim([-10 10]);</p>
+                <p>case 'Membrane'</p>
+                <p>current_data = membrane_data;</p>
+                <p>s = surf(current_data);</p>
+
+                <p>xlim([-10 40]);</p>
+                <p>ylim([-10 40]);</p>
+                <p>zlim([-1 2]);</p>
+                <p>case 'Sinc'</p> 
+                <p>current_data = sinc_data;</p>
+                <p>s = surf(current_data);</p>
+
+                <p>xlim([-15 60]);</p>
+                <p>ylim([-15 60]);</p>
+                <p>zlim([-1 2]);</p>
+                <p>case 'Klein Bottle'</p>
+                <p>[x, y, z] = klein();</p>
+                <p>s = surf(x, y, z);</p>
+                <p>shading interp</p>
+                <p>alpha(.5)</p>
+
+                <p>xlim([-8 6]);</p>
+                <p>ylim([-6 6]);</p>
+                <p>zlim([-3 15]);</p>
+                <p>end</p> 
+                <p>end</p>
+
+                <p>function rotate_Callback(source, eventdata)</p>       
+                <p>direction = [0 0 1]</p>
+                <p>rotate(s, direction, 5)</p>
+                <p>end</p>
+
+                <p>function ovenfra_Callback(source, eventdata)</p>
+                <p>view([0 0 15])</p>
+                <p>end</p>
+
+                <p>function side1_Callback(source, eventdata)</p> 
+                <p>direction = [0 0 1]</p>
+                <p>rotate(s, direction, 180)</p>
+                <p>end</p>
+
+                <p>function timerCallback(hObj, eventdata)</p>
+                <p>direction = [0 0 1];</p>
+                <p>rotate(s, direction, 5)</p>
+                <p>end</p>
+
+                <p>function start_Callback(hObj, eventdata)</p>
+                <p>start(tmr);</p>
+                <p>play(musicPlayer);</p>
+                <p>end</p>
+
+                <p>function stop_Callback(hObj, eventdata)</p>
+                <p>stop(tmr);</p>
+                <p>stop(musicPlayer);</p>
+                <p>end</p>
+                <p>end</p>
+            </div>
+
+        </article>
+
+    </body>
+
+</html>
