@@ -127,6 +127,7 @@ tr:nth-child(2n) {
 
 .members figure {
   display: inline-block;
+  overflow: hidden;
 }
 
 .members img {
